@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color:rgba(20, 19, 19, 0.951);
+ 
+  color: white;
+}
+.btn
+{
+    background-color: cadetblue;
+    border: none;
+    padding-top:15px ;
+    padding-right: 30px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    border-radius: 7px;
+    margin-left: 45%;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.btn:active
+{
+    transform: scale(0.98);
+}
+</style>
+<h2 style="text-align: center;">Hi i am Meghdeep </h2>
+<p style="text-align: center;">this paragraph is used to check the effect </p>
+
+<button  class="btn"onclick="myFunction()">Click  me</button>
+<!-- javascript function -->
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+</body>
+</html>
