@@ -1,0 +1,64 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Photo Gallery</title>
+    <style>
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+ 
+
+}
+.gallery-item {
+  margin: 10px;
+  width: 300px;
+}
+
+.gallery-item img {
+    border:2px solid rgb(0, 0, 0);
+    border-radius: 2px;
+  width: 100%;
+}
+
+    </style>
+  </head>
+  <body>
+    <div id=""></div>
+    
+    <!-- <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div> -->
+    <script>
+        const gallery = document.getElementById('gallery');
+
+        fetch('https://example.com/api/data')
+  .then(response => response.json())
+  .then(data => {
+    // Loop through the data and create a new HTML element for each item
+    data.forEach(item => {
+      const card = document.createElement('div');
+      card.classList.add('card');
+      
+      const title = document.createElement('h2');
+      title.textContent = item.title;
+      card.appendChild(title);
+      
+      const description = document.createElement('p');
+      description.textContent = item.description;
+      card.appendChild(description);
+      
+      // Add the card element to the DOM
+      document.body.appendChild(card);
+    });
+  })
+  .catch(error => console.error(error));    </script>
+  </body>
+</html>
