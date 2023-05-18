@@ -1,0 +1,1 @@
+const cars = ["megh", "phone", "car"];  // <=== this is an array
