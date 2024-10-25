@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card-container" id="cardContainer">
+        Loading cards...
+    </div>
+
+    <script>
+        fetch('https://dummyjson.com/carts')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('cardContainer');
+                container.innerHTML = '';
+                
+                data.carts.forEach(cart => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    
+                    card.innerHTML = `
+                        <div class="card-header">
+                            <h3>Cart #${cart.id}</h3>
+                        </div>
+                        <div class="card-body">
+                            ${cart.products.map(product => `
+                                <div class="product-item">
+                                    <img class="product-image" src=${product.thumbnail} alt="">
+                                    <div class="product-details">
+                                        <div class="product-title">${product.title}</div>
+                                        <div class="product-title">${product.price}</div>
+                                    
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                       
+                    `;
+                    
+                    container.appendChild(card);
+                });
+            })
+            .catch(error => {
+                document.getElementById('cardContainer').innerHTML = `
+                    <div style="color: red; padding: 20px; text-align: center;">
+                        Error loading carts: ${error.message}
+                    </div>
+                `;
+            });
+    </script>
+</body>
+</html>

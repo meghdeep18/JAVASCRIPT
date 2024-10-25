@@ -1,0 +1,52 @@
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+}
+
+.slide:nth-child(1) { background-image: url(https://img.freepik.com/premium-photo/flower-crown-woman-studio-skincare-beauty-relax-zen-cosmetics-jungle-skin-rose-mexican-girl-model-pamper-treatment-organic-natural-product-nature-aesthetic_590464-100793.jpg);}
+.slide:nth-child(2) { background-image: url(https://img.freepik.com/premium-photo/flower-crown-woman-studio-skincare-beauty-relax-zen-cosmetics-jungle-skin-rose-mexican-girl-model-pamper-treatment-organic-natural-product-nature-aesthetic_590464-100793.jpg);}
+.slide:nth-child(3) { background-image: url(https://img.freepik.com/premium-photo/flower-crown-woman-studio-skincare-beauty-relax-zen-cosmetics-jungle-skin-rose-mexican-girl-model-pamper-treatment-organic-natural-product-nature-aesthetic_590464-100793.jpg);}
+.slide:nth-child(4) { background-image: url(https://img.freepik.com/premium-photo/flower-crown-woman-studio-skincare-beauty-relax-zen-cosmetics-jungle-skin-rose-mexican-girl-model-pamper-treatment-organic-natural-product-nature-aesthetic_590464-100793.jpg);}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    border: none;
+    font-size: 1.5rem;
+    transition: background 0.3s;
+}
+
+.slider-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
